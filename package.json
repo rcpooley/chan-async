@@ -1,0 +1,38 @@
+{
+  "name": "chan-async",
+  "version": "1.0.0",
+  "description": "A wrapper for chan to support promises",
+  "repository": "https://github.com/rcpooley/chan-async",
+  "main": "dist/index.js",
+  "keywords": [
+    "chan",
+    "channel",
+    "async",
+    "promise"
+  ],
+  "author": "rcpooley",
+  "license": "ISC",
+  "scripts": {
+    "build": "rimraf ./dist && babel src/ -d dist --copy-files",
+    "prepare": "npm run build && flow-copy-source src dist",
+    "flow": "flow",
+    "test": "npm run build && mocha dist/**/*.test.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "chai": "^4.1.2",
+    "flow-bin": "^0.78.0",
+    "flow-copy-source": "^2.0.2",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "chan": "^0.6.1"
+  },
+  "files": [
+    "dist"
+  ]
+}
